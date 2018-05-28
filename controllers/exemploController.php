@@ -14,11 +14,13 @@ class exemploController extends controller{
 	}
 
 	//Exemplo para actions fora da raiz do controller
-	public function exemploAction(){
+	//Esse id veio da rota
+	public function exemploAction($id){
 		$exemploModel = new Exemplo();
 		$dados = array(
 			'exemploModelMetodo' => $exemploModel->getExemplo(),
-			'exemploModelVar' => $exemploModel->varExemplo1
+			'exemploModelVar' => $exemploModel->varExemplo1,
+			'idRota' => $id
 		);
 		$this->loadTemplate('exemploAction',$dados);
 	}

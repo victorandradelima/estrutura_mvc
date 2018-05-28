@@ -6,6 +6,9 @@ class Core{
 			$url .= $_GET['url'];
 		}
 
+		//Verificação das Routers
+		$url = $this->checkRoutes($url);
+
 		//Essa variável receberá os paramentros que virão logo depois do controller e da action
 		//Se não colocar ela, vai dar pau, caso não tenha paramentros
 		$params = array();
@@ -73,4 +76,48 @@ class Core{
 		//echo "ACTION: ".$currentAction."<br>";
 		//echo "PARAMS: ".print_r($params,true)."<br>";
 	}
+
+
+	//Função que verifica as rotas
+	public function checkRoutes($url){
+		global $routes;
+		
+		//Pt é o indice do vetor e newurl é o valor do vetor no indice pt
+		foreach ($routes as $pt => $newurl){
+			
+			//Identifica os argumentos e substitui por regex (expressões regulares)
+			$pattern = preg_replace('(\{[a-z0-9]{1,}\})', '([a-z0-9]{1,})', $pt);
+
+			//Faz o Match da url
+			if (preg_match('#^('.$pattern.')*$#i', $url, $matches) === 1) {
+				array_shift($matches);
+				array_shift($matches);
+
+
+				//Pega todos os argumentos paa associar
+				$itens = array();
+				if (preg_match_all('(\{[a-z0-9]{1,}\})', $pt, $m)) {
+					$itens = preg_replace('(\{|\})', '', $m[0]);
+				}
+
+				// Faz a associação
+				$arg = array();
+				foreach ($matches as $key => $match) {
+					$arg[$itens[$key]] = $match;
+				}
+
+				//Monta a nova url
+				foreach ($arg as $argkey => $argvalue) {
+					$newurl = str_replace(':'.$argkey, $argvalue, $newurl);
+
+				}
+
+				//Subtitui a nova url na antiga
+				$url = $newurl;
+				break;
+			}
+		}
+		return $url;
+	}
 }
+
