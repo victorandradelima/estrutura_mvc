@@ -3,6 +3,7 @@
 <head>
 	<title>Meu Site</title>
 	<link rel="stylesheet" type="text/css" href="<?php echo BASE_URL ?>assets/css/style.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script type="text/javascript" src="<?php echo BASE_URL ?>assets/js/scripts.js"></script>
 </head>
 <body>
