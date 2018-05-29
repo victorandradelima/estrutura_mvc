@@ -11,7 +11,9 @@
 <nav>
 	<a href="<?php echo BASE_URL ?>">Home</a> | 
 	<a href="<?php echo BASE_URL ?>exemplo">Exemplo</a> | 
-	<a href="<?php echo BASE_URL ?>exemplo/exemploAction">Exemplo Action</a> </nav>
+	<a href="<?php echo BASE_URL ?>exemplo/exemploAction">Exemplo Action</a> |
+	<a href="<?php echo BASE_URL ?>paginacao">Exemplo paginação</a> 
+</nav>
 <hr>
 
 <?php

@@ -5,7 +5,11 @@ error_reporting(E_ALL);
 ini_set("display_errros","On");
 
 session_start();
+//Carrega as bibliotecas adicionadas no composer
+require 'vendor/autoload.php';
+//Configurações de banco de dados
 require 'config.php';
+//Pré definições de URL (rotas)
 require 'routers.php';
 
 spl_autoload_register(function($class){
@@ -17,6 +21,12 @@ spl_autoload_register(function($class){
 		require 'core/'.$class.'.php';
 	}
 });
+
+//Instaciamento e pré configuração da biblioteca monolog
+//$log = new Monolog\Logger("erro");
+//$log->pushHandler(new Monolog\Handler\StreamHandler('erros.log', Monolog\Logger::WARNING));
+
+//$log->addError("Deu algo errado");
 
 $core = new Core();
 $core->run();

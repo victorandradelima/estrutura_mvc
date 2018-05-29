@@ -25,11 +25,11 @@ class paginacaoController extends controller{
 
 		//Se no link tiver um 'p' vamos mudar a página atual para o valor de 'p'
 		if (!empty($_GET['p'])) {
-			$data['paginaAtual'] = intval($_GET['p']);
+			$dados['paginaAtual'] = intval($_GET['p']);
 		}
 
 		//Método para definir o primeiro resultado se baseando em 'p'
-		$offset = ($data['paginaAtual'] * $limit) - $limit;
+		$offset = ($dados['paginaAtual'] * $limit) - $limit;
 
 		//Função que retorna os valore sda query pesquisadam
 		//montando o LIMIT de $offset até $limit
