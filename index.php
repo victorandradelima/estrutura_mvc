@@ -28,7 +28,7 @@ spl_autoload_register(function($class){
 
 //$log->addError("Deu algo errado");
 
-//$core = new Core();
-//$core->run();
+$core = new Core();
+$core->run();
 
 //echo "URL: " .$_GET['url'];
