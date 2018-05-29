@@ -2,10 +2,6 @@
 
 class ajaxController extends controller{
 
-	public function __contruct(){
-		parent::__contruct();
-	}
-
 	public function index(){
 
 		//Uma variável criada para pegar as funções do Model Exemplo
