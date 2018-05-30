@@ -15,8 +15,16 @@ class controller{
 		require 'views/template.php';
 	}
 
+	public function loadTemplateAndView($viewTemplate, $viewName, $viewData = array()){
+		//Função que carrega um template selecionado e depois carrega uma view tambem
+		//selecionada, a view é carregada com a função loadViewInTemplate
+		require 'templates/'.$viewTemplate.'.php';
+	}
+
 	public function loadViewInTemplate($viewName, $viewData = array()){
 		extract($viewData);
 		require 'views/'.$viewName.'.php';
 	}
+
+	
 }

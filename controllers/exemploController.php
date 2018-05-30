@@ -10,7 +10,9 @@ class exemploController extends controller{
 			'exemploModelMetodo' => $exemploModel->getExemplo(),
 			'exemploModelVar' => $exemploModel->varExemplo1
 		);
-		$this->loadTemplate('exemplo',$dados);
+		//Esse função carrega uma template com uma view específica
+		//$this->loadTemplateAndView('nometemplate','nomeview','dados');
+		$this->loadTemplateAndView('exemplo', 'exemplo', $dados);
 	}
 
 	//Exemplo para actions fora da raiz do controller
@@ -22,7 +24,9 @@ class exemploController extends controller{
 			'exemploModelVar' => $exemploModel->varExemplo1,
 			'idRota' => $id
 		);
-		$this->loadTemplate('exemploAction',$dados);
+		//Esse função carrega uma template com uma view específica
+		//$this->loadTemplateAndView('nometemplate','nomeview','dados');
+		$this->loadTemplateAndView('exemplo', 'exemploAction', $dados);
 	}
 
 }

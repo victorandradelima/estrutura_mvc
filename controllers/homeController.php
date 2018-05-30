@@ -18,8 +18,11 @@ class homeController extends controller{
 			'retornoVariavel' => $exemplo->varExemplo1
 		);
 
-		//Aqui chamamos uma view baseada na função loadView que está no core controller
-		$this->loadTemplate('home',$dados);
+		//Esse função carrega uma template com uma view específica
+		//$this->loadTemplateAndView('nometemplate','nomeview','dados');
+		$this->loadTemplateAndView('home', 'home', $dados);
+
+
 
 	}
 

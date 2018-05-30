@@ -22,7 +22,8 @@ class ajaxController extends controller{
 		}
 
 		//Uma view específica para o ajax imprimir seu resultado, mesmo que este resultado
-		//seja em outra view
+		//seja em outra view. Podemos imprimir direto no controller e não usar uma view,
+		//se for pouca coisa
 		$this->loadView('exemploAjax',$dados);
 
 		//No caso do json não precisamos colocar essa view, mas sim da um echo no
