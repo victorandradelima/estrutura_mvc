@@ -86,4 +86,4 @@ Este projeto está licenciado sob a licença MIT - O arquivo de licença está s
 
 ## Agradecimentos (Acknowledgments)
 
-* Obrigado aos mestre (https://github.com/RicardoBackEndPhp) e https://github.com/bonieky
+* Obrigado aos mestres (https://github.com/RicardoBackEndPhp) e https://github.com/bonieky
